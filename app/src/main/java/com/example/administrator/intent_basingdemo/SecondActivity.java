@@ -26,6 +26,7 @@ public class SecondActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.putExtra("SA_data", "Hello First Activity");
+                //（返回处理结果RESULT_OK or RESULT_CANCELED， 返回的数据）
                 setResult(RESULT_OK, intent);
                 finish();
             }

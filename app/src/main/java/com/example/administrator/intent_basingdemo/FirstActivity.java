@@ -20,6 +20,7 @@ public class FirstActivity extends AppCompatActivity {
                 String data = "Hello SecondActivity";
                 Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
                 intent.putExtra("extra_data", data);
+                //（传递的数据，请求码）
                 startActivityForResult(intent, 1);
             }
         });
@@ -28,7 +29,9 @@ public class FirstActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
+            //判断数据是那个 Activity 返回的
             case 1:
+                //判断返回的处理结果
                 if (resultCode == RESULT_OK) {
                     String resultData = data.getStringExtra("SA_data");
                     EditText edittext2 = (EditText) findViewById(R.id.editText2);
